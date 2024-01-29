@@ -19,6 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { toast } from 'sonner';
 
 const bookSchema = z.object({
   title: z
@@ -62,6 +63,7 @@ const AddEditBook = ({ initData, open, onOpenChange }: Props) => {
   const onSubmit = (data: TBookSchema) => {
     if (initData) {
       dispatch(updateBook({ id: initData.id, ...data }));
+      toast('Book saved!');
     } else {
       dispatch(
         addBook({
@@ -69,6 +71,7 @@ const AddEditBook = ({ initData, open, onOpenChange }: Props) => {
           ...data,
         })
       );
+      toast('Book added!');
     }
 
     reset();

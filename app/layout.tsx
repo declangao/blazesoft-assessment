@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import store from '@/store';
 import Navbar from '@/components/navbar';
+import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Provider store={store}>
           <Navbar />
           {children}
+          <Toaster />
         </Provider>
       </body>
     </html>
