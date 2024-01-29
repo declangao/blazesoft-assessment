@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Book } from '@/data';
 import AddEditBook from './add-edit-book';
+import { toast } from 'sonner';
 
 type Props = {
   book: Book;
@@ -36,6 +37,7 @@ const BookActions = ({ book }: Props) => {
 
   const handleDelete = () => {
     dispatch(deleteBook(book.id));
+    toast('Book deleted!');
   };
 
   return (
